@@ -1,25 +1,29 @@
 ---
-import AppLayout from "../../layouts/AppLayout.astro";
-import FormattedDate from "../../components/FormattedDate.astro";
+import AppLayout from "../layouts/AppLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
 
-const title = "全部文章";
-const posts = (await getCollection("blog"))
+// Home page: show the latest posts.
+const latest = (await getCollection("blog"))
   .filter((p) => !p.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
 ---
 
-<AppLayout title={title} description="全部文章列表">
-  <section class="category-head">
-    <h1>{title}</h1>
-    <p>这里展示所有文章（包含子文件夹里的内容）。</p>
+<AppLayout title="你的站点名" description="一句话介绍">
+  <section class="home-hero">
+    <h1>欢迎来到我的小站</h1>
+    <p>这里可以写一句你的自我介绍/标语。</p>
   </section>
 
-  {posts.length === 0 ? (
-    <p class="empty">暂无文章。</p>
-  ) : (
+  <section class="home-feed">
+    <div class="section-head">
+      <h2>最新文章</h2>
+      <a class="more-link" href="/blog">查看全部</a>
+    </div>
+
     <div class="feed-grid">
-      {posts.map((p) => (
+      {latest.map((p) => (
         <article class="post-card">
           <a class="card-link" href={`/blog/${p.id.replace(/\.(md|mdx)$/, "")}/`}>
             <h3 class="card-title">{p.data.title}</h3>
@@ -36,16 +40,26 @@ const posts = (await getCollection("blog"))
         </article>
       ))}
     </div>
-  )}
+  </section>
 </AppLayout>
 
 <style>
-  .category-head {
-    margin-bottom: 24px;
+  .home-hero {
+    margin-bottom: 32px;
   }
 
-  .empty {
-    color: #666;
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .more-link {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #2a82f0;
   }
 
   .feed-grid {

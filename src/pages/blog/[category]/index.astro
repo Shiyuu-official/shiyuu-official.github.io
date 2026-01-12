@@ -1,18 +1,37 @@
 ---
-import AppLayout from "../../layouts/AppLayout.astro";
-import FormattedDate from "../../components/FormattedDate.astro";
+import AppLayout from "../../../layouts/AppLayout.astro";
+import FormattedDate from "../../../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
 
-const title = "全部文章";
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const categories = new Set(
+    posts.map((p) => p.id.split("/")[0]).filter(Boolean),
+  );
+
+  return Array.from(categories).map((category) => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+const labels = {
+  summary: "总结",
+  talk: "随想",
+  creation: "创作",
+  study: "学习",
+  diary: "日记",
+};
+const title = labels[category] ?? category;
 const posts = (await getCollection("blog"))
-  .filter((p) => !p.data.draft)
+  .filter((p) => !p.data.draft && p.id.startsWith(`${category}/`))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<AppLayout title={title} description="全部文章列表">
+<AppLayout title={title} description={`${title}分类`}>
   <section class="category-head">
     <h1>{title}</h1>
-    <p>这里展示所有文章（包含子文件夹里的内容）。</p>
+    <p>这里是 {title} 分类的文章。</p>
   </section>
 
   {posts.length === 0 ? (

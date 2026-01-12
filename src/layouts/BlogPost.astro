@@ -1,86 +1,63 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
+import AppLayout from "./AppLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
-
+// BlogPost 会从页面把这些 props 传进来
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<AppLayout title={title} description={description}>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{title}</h1>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+      <div class="post-meta">
+        <span>发布于 <FormattedDate date={pubDate} /></span>
+        {updatedDate && (
+          <span class="updated">
+            · 更新于 <FormattedDate date={updatedDate} />
+          </span>
+        )}
+      </div>
+
+      {heroImage && (
+        <img class="hero" src={heroImage.src} alt={title} loading="eager" />
+      )}
+    </header>
+
+    <div class="post-content">
+      <slot />
+    </div>
+  </article>
+</AppLayout>
+
+<style>
+  .post {
+    max-width: 72ch;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .post-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .post-meta {
+    margin-top: 0.75rem;
+    opacity: 0.75;
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    margin-top: 1.25rem;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .post-content {
+    margin-top: 2rem;
+  }
+</style>
