@@ -1,0 +1,70 @@
+---
+const { placeholder = "搜索标题 / 副标题 / 标签" } = Astro.props;
+---
+
+<div class="search-panel" data-search-scope>
+  <div class="search-card">
+    <input
+      data-search-input
+      type="search"
+      placeholder={placeholder}
+      aria-label="搜索文章"
+    />
+    <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+  </div>
+</div>
+
+<script type="module">
+  const scopes = document.querySelectorAll("[data-search-scope]");
+
+  const normalize = (value) => value.toLowerCase().trim();
+
+  scopes.forEach((scope) => {
+    const input = scope.querySelector("[data-search-input]");
+    const host = scope.parentElement;
+    const cards = Array.from(host?.querySelectorAll(".post-card") ?? []);
+
+    if (!input) return;
+
+    input.addEventListener("input", () => {
+      const query = normalize(input.value);
+      cards.forEach((card) => {
+        const title = card.dataset.title ?? "";
+        const desc = card.dataset.desc ?? "";
+        const tags = card.dataset.tags ?? "";
+        const haystack = normalize(`${title} ${desc} ${tags}`);
+        card.style.display = haystack.includes(query) ? "" : "none";
+      });
+    });
+  });
+</script>
+
+<style>
+  .search-panel {
+    width: 100%;
+  }
+
+  .search-card {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 12px 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-card input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #333;
+  }
+
+  .search-icon {
+    opacity: 0.6;
+  }
+</style>

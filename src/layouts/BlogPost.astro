@@ -1,28 +1,85 @@
 ---
 import AppLayout from "./AppLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import type { ImageMetadata } from "astro";
 
-// BlogPost 会从页面把这些 props 传进来
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  categoryLabel,
+  wordCount,
+  postId,
+  tags,
+} = Astro.props;
+
+const placeholderModules = import.meta.glob(
+  "../assets/default-cover/*.{jpg,jpeg,png,webp}",
+  { eager: true },
+);
+const placeholders = Object.values(placeholderModules).map(
+  (mod) => (mod as { default: ImageMetadata }).default,
+);
+const pickPlaceholder = (id) => {
+  if (!id || placeholders.length == 0) return undefined;
+  let hash = 0;
+  for (let i = 0; i < id.length; i += 1) {
+    hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
+  }
+  return placeholders[hash % placeholders.length];
+};
+const coverImage = heroImage ?? pickPlaceholder(postId);
 ---
 
 <AppLayout title={title} description={description}>
   <article class="post">
     <header class="post-header">
-      <h1 class="post-title">{title}</h1>
+      {coverImage && (
+        <div
+          class="hero-frame"
+          style={`--cover-url: url('${coverImage.src}');`}
+        >
+          <img class="hero" src={coverImage.src} alt={title} loading="eager" />
+        </div>
+      )}
 
-      <div class="post-meta">
-        <span>发布于 <FormattedDate date={pubDate} /></span>
-        {updatedDate && (
-          <span class="updated">
-            · 更新于 <FormattedDate date={updatedDate} />
+      <div class="post-header-text">
+        <h1 class="post-title">{title}</h1>
+
+        <div class="post-meta">
+          <span class="meta-item">
+            <i class="fa-regular fa-calendar-days" aria-hidden="true"></i>
+            <FormattedDate date={pubDate} format="ymd" />
           </span>
+          {updatedDate && (
+            <span class="meta-item">
+              <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+              <FormattedDate date={updatedDate} format="ymd" />
+            </span>
+          )}
+          {categoryLabel && (
+            <span class="meta-item">
+              <i class="fa-regular fa-folder" aria-hidden="true"></i>
+              {categoryLabel}
+            </span>
+          )}
+          {wordCount != null && (
+            <span class="meta-item">
+              <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+              约 {wordCount} 字
+            </span>
+          )}
+        </div>
+        {tags?.length > 0 && (
+          <div class="post-tags">
+            {tags.map((tag) => (
+              <span class="post-tag" title={tag}>{tag}</span>
+            ))}
+          </div>
         )}
       </div>
-
-      {heroImage && (
-        <img class="hero" src={heroImage.src} alt={title} loading="eager" />
-      )}
     </header>
 
     <div class="post-content">
@@ -36,6 +93,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     max-width: 72ch;
     margin: 0 auto;
     padding: 2.5rem 1.25rem;
+    min-height: calc(100vh - 150px);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(10px);
   }
 
   .post-title {
@@ -48,13 +110,52 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     margin-top: 0.75rem;
     opacity: 0.75;
     font-size: 0.95rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .post-tags {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .post-tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  .hero-frame {
+    margin: -2.5rem -1.25rem 1.5rem -1.25rem;
+    width: calc(100% + 2.5rem);
+    height: 260px;
+    border-radius: 18px 18px 0 0;
+    overflow: hidden;
+    background-image: var(--cover-url);
+    background-size: cover;
+    background-position: center;
   }
 
   .hero {
-    margin-top: 1.25rem;
     width: 100%;
-    height: auto;
-    border-radius: 16px;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   .post-content {

@@ -1,17 +1,19 @@
 ---
 interface Props {
 	date: Date;
+	format?: "short" | "ymd";
 }
 
-const { date } = Astro.props;
+const { date, format = "short" } = Astro.props;
+const ymd = date.toISOString().slice(0, 10);
 ---
 
 <time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-		})
-	}
+	{format === "ymd"
+		? ymd
+		: date.toLocaleDateString("en-us", {
+				year: "numeric",
+				month: "short",
+				day: "numeric",
+			})}
 </time>

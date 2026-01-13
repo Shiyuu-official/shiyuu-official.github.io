@@ -1,20 +1,39 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import { estimateWordCount, getCategoryLabel } from "../../utils/postMeta";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      categoryLabel: getCategoryLabel(post.id),
+      wordCount: estimateWordCount(post.body),
+      postId: post.id,
+      tags: post.data.tags ?? [],
+    },
+  }));
 }
-type Props = CollectionEntry<'blog'>;
 
-const post = Astro.props;
+type Props = CollectionEntry<"blog">;
+const { post, categoryLabel, wordCount, postId, tags } = Astro.props as {
+  post: Props;
+  categoryLabel: string;
+  wordCount: number;
+  postId: string;
+  tags: string[];
+};
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post.data}>
-	<Content />
+<BlogPost
+  {...post.data}
+  categoryLabel={categoryLabel}
+  wordCount={wordCount}
+  postId={postId}
+  tags={tags}
+>
+  <Content />
 </BlogPost>

@@ -1,0 +1,198 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import type { ImageMetadata } from "astro";
+
+const { post, categoryLabel, wordCount } = Astro.props;
+
+const placeholderModules = import.meta.glob(
+  "../assets/default-cover/*.{jpg,jpeg,png,webp}",
+  { eager: true },
+);
+const placeholders = Object.values(placeholderModules).map(
+  (mod) => (mod as { default: ImageMetadata }).default,
+);
+
+const pickPlaceholder = (id: string) => {
+  if (placeholders.length === 0) return undefined;
+  let hash = 0;
+  for (let i = 0; i < id.length; i += 1) {
+    hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
+  }
+  return placeholders[hash % placeholders.length];
+};
+
+const image = post.data.heroImage ?? pickPlaceholder(post.id);
+---
+
+<article
+  class="post-card"
+  data-title={post.data.title}
+  data-desc={post.data.description}
+  data-tags={(post.data.tags ?? []).join(" ")}
+>
+  <a class="card-link" href={`/blog/${post.id.replace(/\.(md|mdx)$/, "")}/`}>
+    {image && (
+      <img class="card-cover" src={image.src} alt={post.data.title} loading="lazy" />
+    )}
+    <div class="card-body">
+      <div class="card-text">
+        <h3 class="card-title">{post.data.title}</h3>
+        <p class="card-desc">{post.data.description}</p>
+      </div>
+
+      <div class="card-meta">
+        <div class="card-row">
+          <span class="meta-item meta-date">
+            <i class="fa-regular fa-calendar-days" aria-hidden="true"></i>
+            <FormattedDate date={post.data.pubDate} format="ymd" />
+          </span>
+          {post.data.updatedDate && (
+            <span class="meta-item meta-date">
+              <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+              <FormattedDate date={post.data.updatedDate} format="ymd" />
+            </span>
+          )}
+        </div>
+        <div class="card-row">
+          <span class="meta-item">
+                  <span class="icon"><i class="fa-regular fa-folder"></i></span> 
+             {categoryLabel}</span>
+          <span class="meta-item">约 {wordCount} 字</span>
+        </div>
+{post.data.tags?.length > 0 && (
+  <div class="card-tags" title={post.data.tags.join(" / ")}>
+    {post.data.tags.slice(0, 3).map((tag) => (
+      <span class="card-tag" title={tag}>{tag}</span>
+    ))}
+    {post.data.tags.length > 3 && (
+      <span class="card-tag card-tag-more">...</span>
+    )}
+  </div>
+)}
+
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  .post-card {
+    width: 260px;
+    height: 440px;
+    --cover-h: 250px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .post-card:hover,
+  .post-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .card-cover {
+    width: 100%;
+    height: var(--cover-h);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 16px 16px 16px;
+    height: calc(100% - var(--cover-h));
+    box-sizing: border-box;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    margin: 0 0 6px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-meta {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: #666;
+  }
+
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    white-space: nowrap;
+  }
+
+  .meta-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .meta-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .meta-date i {
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+  .meta-label {
+    font-size: 0.72rem;
+    opacity: 0.7;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 46px;
+    overflow: hidden;
+  }
+
+  .card-tag {
+    max-width: 90px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>

@@ -156,3 +156,9 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+figcaption {
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
