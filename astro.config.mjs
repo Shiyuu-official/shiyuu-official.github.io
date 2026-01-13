@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://github.com/Shiyuu-official/my-blog',
+	site: 'https://Shiyuu-official.github.io',
+	base: '/my-blog',
 	integrations: [mdx(), sitemap()],
 });
