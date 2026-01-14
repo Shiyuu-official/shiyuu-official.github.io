@@ -1,0 +1,56 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import LinkCard from "../components/LinkCard.astro";
+
+const links = [
+  {
+    name: "ChatGPT",
+    subtitle: "爹！",
+    url: "https://chatgpt.com/",
+    avatar: "https://th.bing.com/th/id/OSK.UumnVHZKD5zlXvOHIZ50ztUhAMwR2bKEKxT1U0y4IOo?w=120&h=120&c=12&p=0&pid=RS",
+  },
+  {
+    name: "GitHub",
+    subtitle: "常回家看看",
+    url: "https://github.com/",
+    avatar: "https://www.bing.com/th?id=OSK.8zbvrbw6aGfFAh0dmwEHZDcKgqx7P3e93Kh6vG8-rtQ&w=120&h=120&qlt=90&c=6&rs=1&cdv=1&pid=RS",
+  },
+  {
+    name: "回首空城",
+    subtitle: "写博客的时候狠狠抄袭了",
+    url: "https://entropy622.github.io/",
+    avatar: "https://avatars.githubusercontent.com/u/60346187?v=4",
+  },
+    {
+    name: "emoji",
+    subtitle: "打不出来就来这看看吧",
+    url: "https://www.emojiall.com/zh-hans",
+    avatar: "https://www.emojiall.com/images/240/apple/ios-18.4/1f609.png",
+  },
+      {
+    name: "FontAwesome",
+    subtitle: "好看，简洁的图标库",
+    url: "https://fontawesome.com/search",
+    avatar: "https://fontawesome.com/images/favicon/icon.svg",
+  },
+];
+---
+
+<AppLayout title="友情链接" description="友情链接">
+  <div class="links-grid">
+    {links.map((link) => (
+      <LinkCard {...link} />
+    ))}
+  </div>
+</AppLayout>
+
+<style>
+
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 24px 16px;
+    align-items: start;
+  }
+</style>
