@@ -167,3 +167,112 @@ figcaption {
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
+/* GitHub-like markdown styling for posts */
+.markdown-body {
+  color: #1f2328;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.markdown-body :where(h1, h2, h3, h4, h5, h6) {
+  font-weight: 700;
+  margin-top: 1.6em;
+}
+
+.markdown-body :where(h1, h2) {
+  border-bottom: 1px solid #d0d7de;
+  padding-bottom: 0.3em;
+}
+
+.markdown-body :where(p, ul, ol, pre, blockquote, table, figure) {
+  margin: 1em 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 1.5em;
+}
+
+.markdown-body li {
+  margin: 0.35em 0;
+}
+
+.markdown-body a {
+  color: #0969da;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown-body code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+.markdown-body pre {
+  background: #0b1623;
+  color: #c9d1d9;
+  border-radius: 10px;
+  padding: 1em 1.2em;
+  overflow: auto;
+}
+
+.markdown-body pre code {
+  background: none;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid #d0d7de;
+  padding: 0.4em 1em;
+  color: #57606a;
+  background: #f6f8fa;
+  border-radius: 6px;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #d0d7de;
+  padding: 0.5em 0.8em;
+}
+
+.markdown-body thead {
+  background: #f6f8fa;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid #d0d7de;
+  margin: 1.5em 0;
+}
+
+.markdown-body h2 {
+  margin: 1.2em 0 0.4em; /* 上 右左 下 */
+}
+/* H2 左竖条（伪元素版本，更好对齐） */
+.markdown-body h2 {
+  position: relative;
+  padding-left: 0.9em;
+  line-height: 1.2;
+  font-weight: 600;
+  border-bottom: none;
+    margin-left: -0.5em;
+}
+
+.markdown-body h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.05em;      /* 微调竖条上下位置 */
+  width: 6px;
+  height: 1em;      /* 跟随文字高度 */
+  background: #1f2d3d;
+  border-radius: 9px;
+}
