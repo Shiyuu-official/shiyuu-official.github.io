@@ -30,7 +30,7 @@ const image = post.data.heroImage ?? pickPlaceholder(post.id);
   data-desc={post.data.description}
   data-tags={(post.data.tags ?? []).join(" ")}
 >
-  <a class="card-link" href={`${import.meta.env.BASE_URL}blog/${post.id.replace(/\.(md|mdx)$/, "")}/`}>
+  <a class="card-link" href={`/blog/${post.id.replace(/\.(md|mdx)$/, "")}/`}>
     {image && (
       <img class="card-cover" src={image.src} alt={post.data.title} loading="lazy" />
     )}
