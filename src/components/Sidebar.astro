@@ -19,7 +19,7 @@ const isActive = (href) =>
   </div>
 
   <div class="glass-card menu">
-    <a href={`/main`} class={`menu-item ${isActive("/main") ? "active" : ""}`}>
+    <a href={`/`} class={`menu-item ${isActive("/") ? "active" : ""}`}>
       <span class="icon"><i class="fa-solid fa-house"></i></span> 
       <span class="text">主页</span>
     </a>
@@ -85,7 +85,14 @@ const isActive = (href) =>
     transition: transform 0.3s ease;
   }
 
-
+  .glass-card:hover,
+  .glass-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  } 
+  
+  
+  /*选中时的悬浮效果*/
 
   /* --- 个人资料样式 --- */
   .avatar {
