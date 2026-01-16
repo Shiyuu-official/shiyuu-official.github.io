@@ -276,3 +276,6 @@ figcaption {
   background: #1f2d3d;
   border-radius: 9px;
 }
+figcaption {
+  margin-top: -4px; /* 往上微移 */
+}
