@@ -1,212 +1,215 @@
 {
-  "generatedAt": "2026-09-07T07:35:53.913552Z",
+  "generatedAt": "2026-09-14T08:09:49.555172Z",
   "source": "pixivpy3:illust_ranking(mode=week)",
   "total": 10,
   "items": [
     {
       "rank": 1,
-      "id": "149128711",
-      "title": "19th",
+      "id": "149365241",
+      "title": "君を辿る軌跡",
       "userName": "Rella",
       "userId": "163536",
-      "artworkUrl": "https://www.pixiv.net/artworks/149128711",
-      "thumbnailUrl": "/pixiv-weekly/149128711.jpg",
+      "artworkUrl": "https://www.pixiv.net/artworks/149365241",
+      "thumbnailUrl": "/pixiv-weekly/149365241.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/01/00/00/24/149128711_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/00/22/149365241_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/01/00/00/24/149128711_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/00/22/149365241_p0_master1200.jpg",
       "tags": [
-        "VOCALOID",
-        "初音ミク",
-        "黄金比",
-        "VOCALOID10000users入り",
-        "19th"
+        "魔法少女まどか☆マギカ",
+        "鹿目まどか",
+        "暁美ほむら",
+        "まどか☆マギカ10000users入り"
       ]
     },
     {
       "rank": 2,
-      "id": "149086653",
-      "title": "🍪",
-      "userName": "しぐれうい",
-      "userId": "431873",
-      "artworkUrl": "https://www.pixiv.net/artworks/149086653",
-      "thumbnailUrl": "/pixiv-weekly/149086653.jpg",
+      "id": "149431011",
+      "title": "モンブラン",
+      "userName": "チャイ",
+      "userId": "1096811",
+      "artworkUrl": "https://www.pixiv.net/artworks/149431011",
+      "thumbnailUrl": "/pixiv-weekly/149431011.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/00/28/149086653_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/20/30/02/149431011_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/00/28/149086653_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/20/30/02/149431011_p0_master1200.jpg",
       "tags": [
-        "しぐれうい",
-        "バーチャルYouTuber5000users入り"
+        "オリジナル",
+        "すいーつねこ",
+        "素晴らしきほっこりの世界",
+        "ニャンブラン",
+        "食べ物1000users入り",
+        "オリジナル1000users入り",
+        "モンブラン",
+        "にゃにこれかわいい",
+        "ウワー"
       ]
     },
     {
       "rank": 3,
-      "id": "149088559",
-      "title": "8月31日",
-      "userName": "おむたつ/omutatsu",
-      "userId": "1499614",
-      "artworkUrl": "https://www.pixiv.net/artworks/149088559",
-      "thumbnailUrl": "/pixiv-weekly/149088559.jpg",
+      "id": "149403658",
+      "title": "◆◇◆◇◆",
+      "userName": "hakusai",
+      "userId": "1589657",
+      "artworkUrl": "https://www.pixiv.net/artworks/149403658",
+      "thumbnailUrl": "/pixiv-weekly/149403658.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/27/08/149088559_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/00/00/06/149403658_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/27/08/149088559_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/00/00/06/149403658_p0_master1200.jpg",
       "tags": [
-        "VOCALOID",
-        "初音ミク",
-        "初音ミク生誕祭2026",
-        "マジカルミライ2026",
-        "VOCALOID5000users入り"
+        "魔法少女まどか☆マギカ",
+        "鹿目まどか",
+        "まどか☆マギカ1000users入り"
       ]
     },
     {
       "rank": 4,
-      "id": "149086708",
-      "title": "骨",
-      "userName": "kieed",
-      "userId": "11525066",
-      "artworkUrl": "https://www.pixiv.net/artworks/149086708",
-      "thumbnailUrl": "/pixiv-weekly/149086708.jpg",
+      "id": "149435610",
+      "title": "ティーブレイク",
+      "userName": "上山道郎",
+      "userId": "53823",
+      "artworkUrl": "https://www.pixiv.net/artworks/149435610",
+      "thumbnailUrl": "/pixiv-weekly/149435610.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/00/36/149086708_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/22/10/32/149435610_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/00/36/149086708_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/22/10/32/149435610_p0_master1200.jpg",
       "tags": [
-        "初音ミク",
-        "VOCALOID",
-        "初音ミク生誕祭2026",
-        "VOCALOID5000users入り",
-        "骨"
+        "悪役令嬢転生おじさん",
+        "ラクガキ",
+        "屯田林憲三郎",
+        "グレイス・オーヴェルヌ"
       ]
     },
     {
       "rank": 5,
-      "id": "149157545",
-      "title": "卵かけご飯",
-      "userName": "チャイ",
-      "userId": "1096811",
-      "artworkUrl": "https://www.pixiv.net/artworks/149157545",
-      "thumbnailUrl": "/pixiv-weekly/149157545.jpg",
+      "id": "149440738",
+      "title": "髪下ろし志摩リンちゃん",
+      "userName": "CORE",
+      "userId": "11211325",
+      "artworkUrl": "https://www.pixiv.net/artworks/149440738",
+      "thumbnailUrl": "/pixiv-weekly/149440738.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/01/20/30/03/149157545_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/09/00/02/05/149440738_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/01/20/30/03/149157545_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/09/00/02/05/149440738_p0_master1200.jpg",
       "tags": [
-        "オリジナル",
-        "卵かけご飯",
-        "素晴らしきほっこりの世界",
-        "いきものごはん",
-        "タニャゴかけご飯",
-        "にゃまご飯",
-        "ちょこん",
-        "TKG",
-        "食べ物1000users入り",
-        "オリジナル1000users入り"
+        "ゆるキャン△",
+        "志摩リン",
+        "女の子",
+        "ロングヘアー",
+        "青髪",
+        "少女",
+        "ゆるキャン△1000users入り",
+        "パーカー",
+        "髪下ろし"
       ]
     },
     {
       "rank": 6,
-      "id": "149086833",
-      "title": "HBD MIKU",
-      "userName": "上倉エク",
-      "userId": "299299",
-      "artworkUrl": "https://www.pixiv.net/artworks/149086833",
-      "thumbnailUrl": "/pixiv-weekly/149086833.jpg",
+      "id": "149365167",
+      "title": "ロミオとシンデレラ",
+      "userName": "大熊まい◆MaiOkuma",
+      "userId": "29449",
+      "artworkUrl": "https://www.pixiv.net/artworks/149365167",
+      "thumbnailUrl": "/pixiv-weekly/149365167.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/01/01/149086833_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/00/12/149365167_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/01/01/149086833_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/00/12/149365167_p0_master1200.jpg",
       "tags": [
-        "初音ミク",
-        "VOCALOID",
-        "VOCALOID1000users入り"
+        "仕事絵",
+        "プロジェクトセカイ",
+        "日野森雫",
+        "ロミオとシンデレラ",
+        "The_Music_Style",
+        "あなた様でしたか",
+        "ロミオとシンデレラ(日野森雫)",
+        "花",
+        "水色髪"
       ]
     },
     {
       "rank": 7,
-      "id": "149168682",
-      "title": "絵チャまとめ",
-      "userName": "Ameもちᵕ̈*🍭",
-      "userId": "59688623",
-      "artworkUrl": "https://www.pixiv.net/artworks/149168682",
-      "thumbnailUrl": "/pixiv-weekly/149168682.jpg",
+      "id": "149366184",
+      "title": "お母様",
+      "userName": "ようじつ※xfolioもある",
+      "userId": "2521867",
+      "artworkUrl": "https://www.pixiv.net/artworks/149366184",
+      "thumbnailUrl": "/pixiv-weekly/149366184.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/02/00/15/59/149168682_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/12/32/149366184_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/02/00/15/59/149168682_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/12/32/149366184_p0_master1200.jpg",
       "tags": [
-        "OC",
-        "オリジナル",
-        "絵チャ",
-        "女の子",
-        "男の子",
-        "オリジナル1000users入り",
-        "え……絵チャ?"
+        "アルレッキーノ(原神)",
+        "蛍(原神)",
+        "リネ(原神)",
+        "リネット(原神)",
+        "フレミネ",
+        "召蛍",
+        "原神1000users入り"
       ]
     },
     {
       "rank": 8,
-      "id": "149087630",
-      "title": "miku 2026",
-      "userName": "千夜QYS3",
-      "userId": "7210261",
-      "artworkUrl": "https://www.pixiv.net/artworks/149087630",
-      "thumbnailUrl": "/pixiv-weekly/149087630.jpg",
+      "id": "149404169",
+      "title": "無題",
+      "userName": "B.V.",
+      "userId": "13167207",
+      "artworkUrl": "https://www.pixiv.net/artworks/149404169",
+      "thumbnailUrl": "/pixiv-weekly/149404169.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/53/35/149087630_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/00/03/26/149404169_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/53/35/149087630_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/00/03/26/149404169_p0_master1200.jpg",
       "tags": [
-        "女の子",
-        "VOCALOID",
-        "初音ミク",
-        "miku",
-        "初音ミク生誕祭2026",
-        "VOCALOID5000users入り",
-        "ツインテール",
-        "ドーナツ"
+        "オリジナル",
+        "創作"
       ]
     },
     {
       "rank": 9,
-      "id": "149089317",
-      "title": "あなたに伝えたい",
-      "userName": "PiPi",
-      "userId": "71334597",
-      "artworkUrl": "https://www.pixiv.net/artworks/149089317",
-      "thumbnailUrl": "/pixiv-weekly/149089317.jpg",
+      "id": "149365213",
+      "title": "美樹さやか",
+      "userName": "Yuzuki",
+      "userId": "676740",
+      "artworkUrl": "https://www.pixiv.net/artworks/149365213",
+      "thumbnailUrl": "/pixiv-weekly/149365213.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/43/46/149089317_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/00/18/149365213_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/43/46/149089317_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/07/00/00/18/149365213_p0_master1200.jpg",
       "tags": [
-        "初音ミク",
-        "VOCALOID",
-        "ボーカロイド",
-        "HatsuneMiku",
-        "ミクさんと花",
-        "VOCALOID1000users入り"
+        "美樹さやか",
+        "まどか☆マギカ",
+        "魔法少女まどか☆マギカ",
+        "ワルプルギスの廻天",
+        "まどか☆マギカ1000users入り",
+        "包帯さやか",
+        "片目隠れ",
+        "長手袋"
       ]
     },
     {
       "rank": 10,
-      "id": "149086628",
-      "title": "🌻",
-      "userName": "八三",
-      "userId": "637197",
-      "artworkUrl": "https://www.pixiv.net/artworks/149086628",
-      "thumbnailUrl": "/pixiv-weekly/149086628.jpg",
+      "id": "149405808",
+      "title": "ロノヴァ捏造いろいろ",
+      "userName": "結",
+      "userId": "11778898",
+      "artworkUrl": "https://www.pixiv.net/artworks/149405808",
+      "thumbnailUrl": "/pixiv-weekly/149405808.jpg",
       "fallbackThumbnailUrls": [
-        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/00/24/149086628_p0_master1200.jpg"
+        "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/00/39/22/149405808_p0_master1200.jpg"
       ],
-      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/08/31/00/00/24/149086628_p0_master1200.jpg",
+      "originalThumbnailUrl": "https://i.pximg.net/c/600x1200_90/img-master/img/2026/09/08/00/39/22/149405808_p0_master1200.jpg",
       "tags": [
-        "初音ミク",
-        "VOCALOID",
-        "初音ミク誕生祭2026",
-        "マジカルミライ2026",
-        "VOCALOID1000users入り"
+        "原神",
+        "GenshinImpact",
+        "ロノヴァ",
+        "原神500users入り"
       ]
     }
   ]
